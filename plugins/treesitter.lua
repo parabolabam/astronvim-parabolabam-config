@@ -1,0 +1,38 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = function(_, opts)
+    -- add more things to the ensure_installed table protecting against community packs modifying it
+    opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
+      "lua",
+      "bash",
+      "css",
+      "dockerfile",
+      "git_config",
+      "git_rebase",
+      "gitattributes",
+      "gitcommit",
+      "gitignore",
+      "go",
+      "graphql",
+      "html",
+      "http",
+      "javascript",
+      "jsdoc",
+      "json",
+      "json5",
+      "jsonc",
+      "luadoc",
+      "python",
+      "ruby",
+      "rust",
+      "scss",
+      "sql",
+      "svelte",
+      "terraform",
+      "tsx",
+      "typescript",
+      "vue",
+      "vim",
+    })
+  end,
+}
