@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin",
+  colorscheme = "catppuccin-frappe",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -61,7 +61,6 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
       "angularls",
       "tsserver",
       "cssls",

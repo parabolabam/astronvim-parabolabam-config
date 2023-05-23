@@ -8,30 +8,6 @@ return {
       cmd = { "DapInstall", "DapUninstall" },
       opts = {
         handlers = {
-          ["typescript"] = {
-            type = "node",
-            request = "launch",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            args = {
-              "-r",
-              "tsconfig-paths/register",
-            },
-            console = "integratedTerminal",
-            adapter = "node",
-          },
-          ["javascript"] = {
-            type = "node",
-            request = "launch",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            args = {
-              "-r",
-              "tsconfig-paths/register",
-            },
-            console = "integratedTerminal",
-            adapter = "node",
-          },
 
         }
       },
