@@ -1,5 +1,4 @@
 return {
-  -- {
   --   'lewis6991/satellite.nvim',
   --   config = function()
   --     require('satellite').setup()
@@ -10,7 +9,6 @@ return {
     'mg979/vim-visual-multi',
     branch = 'master',
     event = "User AstroFile",
-
   },
   {
     'lewis6991/satellite.nvim',
