@@ -72,4 +72,5 @@ return {
       return opts
     end,
   },
+  { "goolord/alpha-nvim" }
 }

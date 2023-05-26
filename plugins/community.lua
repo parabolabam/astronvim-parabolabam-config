@@ -4,6 +4,8 @@ return {
   { import = "astrocommunity.colorscheme.kanagawa" },
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.dracula" },
+
   {
     -- further customize the options set by the community
     "catppuccin",
