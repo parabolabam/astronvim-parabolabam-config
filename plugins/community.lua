@@ -6,6 +6,9 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.dracula" },
 
+  { import = "astrocommunity.colorscheme.everforest" },
+
+  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   {
     -- further customize the options set by the community
     "catppuccin",

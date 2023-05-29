@@ -16,13 +16,8 @@ return function()
     OctoEditable = { fg = "NONE", bg = "NONE" },
 
 
-    TelescopeNormal = { bg = bg },
-    TelescopePreviewNormal = { bg = bg },
     TelescopePreviewTitle = { fg = bg, bg = green },
-    TelescopePromptNormal = { fg = fg, bg = bg_alt },
-    TelescopePromptPrefix = { fg = red, bg = bg_alt },
     TelescopePromptTitle = { fg = bg, bg = red },
-    TelescopeResultsNormal = { bg = bg },
-    TelescopeResultsTitle = { fg = bg, bg = bg }, -- use treesitter for octo.nvim highlighting
+    TelescopeResultsTitle = { fg = bg, bg = red }, -- use treesitter for octo.nvim highlighting
   }
 end
