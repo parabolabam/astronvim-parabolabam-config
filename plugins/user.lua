@@ -42,5 +42,6 @@ return {
       return opts
     end,
   },
-  { "goolord/alpha-nvim" }
+  { "goolord/alpha-nvim" },
+  { 'akinsho/git-conflict.nvim', version = "*", config = true }
 }
