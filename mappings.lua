@@ -30,7 +30,12 @@ local mappings = {
 
     -- Telescope
     ["<leader>fp"] = { function() require("telescope").extensions.projects.projects {} end, desc = "Find projects" },
+    ["<leader>ggc"] = { function() require("telescope.builtin").git_commits() end, desc = "Find commit" },
 
+    ["<leader>gc"] = { function() require("telescope.builtin").git_bcommits() end, desc =
+    "Find commit for current buffer" },
+
+    -- Spectre search/replace
     ["<leader>s"] = { desc = "󰛔 Search/Replace" },
     ["<leader>ss"] = { function() require("spectre").open() end, desc = "Spectre" },
     ["<leader>sf"] = { function() require("spectre").open_file_search() end, desc = "Spectre (current file)" },

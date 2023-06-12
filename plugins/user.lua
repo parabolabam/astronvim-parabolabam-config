@@ -43,5 +43,40 @@ return {
     end,
   },
   { "goolord/alpha-nvim" },
-  { 'akinsho/git-conflict.nvim', version = "*", config = true }
+  { 'akinsho/git-conflict.nvim', version = "*", config = true },
+  {
+    "jake-stewart/jfind.nvim",
+    keys = {
+      { "<c-f>" },
+    },
+    config = function()
+      require("jfind").setup({
+        exclude = {
+          ".git",
+          ".idea",
+          ".vscode",
+          ".sass-cache",
+          ".class",
+          "__pycache__",
+          "node_modules",
+          "target",
+          "build",
+          "tmp",
+          "assets",
+          "dist",
+          "public",
+          "*.iml",
+          "*.meta"
+        },
+        border = "rounded",
+        tmux = true,
+        formatPaths = true,
+        key = "<c-f>"
+      });
+    end
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "User Astrofile"
+  }
 }
