@@ -38,45 +38,30 @@ return {
         -- remove the 2nd mode indicator on the right
       }
 
-      -- return the final configuration table
       return opts
+      -- return the final configuration table
     end,
   },
   { "goolord/alpha-nvim" },
   { 'akinsho/git-conflict.nvim', version = "*", config = true },
   {
-    "jake-stewart/jfind.nvim",
-    keys = {
-      { "<c-f>" },
-    },
-    config = function()
-      require("jfind").setup({
-        exclude = {
-          ".git",
-          ".idea",
-          ".vscode",
-          ".sass-cache",
-          ".class",
-          "__pycache__",
-          "node_modules",
-          "target",
-          "build",
-          "tmp",
-          "assets",
-          "dist",
-          "public",
-          "*.iml",
-          "*.meta"
-        },
-        border = "rounded",
-        tmux = true,
-        formatPaths = true,
-        key = "<c-f>"
-      });
-    end
-  },
-  {
     "sindrets/diffview.nvim",
     event = "User Astrofile"
+  },
+  {
+    "neanias/everforest-nvim",
+    config = function()
+      require("everforest").setup({
+        background = "medium"
+      })
+    end,
+  },
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   }
+
 }
