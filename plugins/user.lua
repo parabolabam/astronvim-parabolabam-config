@@ -1,10 +1,4 @@
 return {
-  --   'lewis6991/satellite.nvim',
-  --   config = function()
-  --     require('satellite').setup()
-  --   end,
-  --   event = "User Astrofile",
-  -- }
   {
     'mg979/vim-visual-multi',
     branch = 'master',
@@ -49,19 +43,10 @@ return {
     event = "User Astrofile"
   },
   {
-    "neanias/everforest-nvim",
-    config = function()
-      require("everforest").setup({
-        background = "medium"
-      })
-    end,
-  },
-
-  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
-  }
-
+  },
+  { 'petertriho/nvim-scrollbar' },
 }
