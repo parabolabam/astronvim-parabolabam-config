@@ -32,7 +32,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "dracula",
+  colorscheme = "everforest",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
