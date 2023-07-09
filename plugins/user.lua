@@ -44,9 +44,28 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
+    {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      opts = {
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+        },
+      },
+    }
   },
   { 'petertriho/nvim-scrollbar' },
+  {
+    'prettier/vim-prettier',
+    opts = {
+
+    }
+  },
+  {
+    "github/copilot.vim",
+    event = "InsertEnter",
+    autoStart = true,
+  },
 }
