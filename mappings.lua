@@ -14,9 +14,6 @@ local mappings = {
       desc = "Switch Buffers",
     },
 
-    ["<C-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
-    ["<C-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
-
     -- Gitsigns
     ["<leader>gj"] = { function() require("gitsigns").next_hunk() end, desc = "Next git hunk" },
     ["leader>gk"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous git hunk" },
@@ -32,8 +29,6 @@ local mappings = {
     ["<leader>fp"] = { function() require("telescope").extensions.projects.projects {} end, desc = "Find projects" },
     ["<leader>ggc"] = { function() require("telescope.builtin").git_commits() end, desc = "Find commit" },
     ["<c-f>"] = { function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Find commit" },
-
-
     ["<leader>gc"] = { function() require("telescope.builtin").git_bcommits() end, desc =
     "Find commit for current buffer" },
 
@@ -45,11 +40,25 @@ local mappings = {
       function() require("spectre").open_visual { select_word = true } end,
       desc = "Spectre (current word)",
     },
+
   },
 
   v = {
 
+  },
+
+  i = {
+    ["<C-a>"] = { 
+      function()
+        local is_suggestion_visible = require('copilot.suggestion').is_visible();
+
+        if is_suggestion_visible then
+          require('copilot.suggestion').accept();
+        end
+      end
+    }
   }
-}
+
+ }
 
 return mappings

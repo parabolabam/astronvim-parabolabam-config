@@ -59,13 +59,31 @@ return {
   { 'petertriho/nvim-scrollbar' },
   {
     'prettier/vim-prettier',
-    opts = {
-
-    }
+    lazy = false,
+    config = function()
+    end
   },
   {
-    "github/copilot.vim",
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
     event = "InsertEnter",
-    autoStart = true,
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+        }
+      })
+      end,
+  },
+  {
+    'eddyekofo94/gruvbox-flat.nvim',
+    priority = 1000,
+    enabled = true,
+    lazy = false,
+    config = function()
+        vim.cmd([[colorscheme gruvbox-flat]])
+    end,
   },
 }
