@@ -48,7 +48,7 @@ local mappings = {
   },
 
   i = {
-    ["<C-a>"] = { 
+    ["<C-d>"] = { 
       function()
         local is_suggestion_visible = require('copilot.suggestion').is_visible();
 
