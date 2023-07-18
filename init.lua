@@ -32,7 +32,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin-frappe",
+  colorscheme = "gruvbox-flat",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {

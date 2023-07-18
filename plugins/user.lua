@@ -83,7 +83,7 @@ return {
     enabled = true,
     lazy = false,
     config = function()
-        vim.cmd([[colorscheme gruvbox-flat]])
+        -- vim.cmd([[colorscheme gruvbox-flat]])
     end,
   },
   {
@@ -94,6 +94,10 @@ return {
         transparent_background = true,
       }
       end,
+  },
+  {
+    "sainnhe/everforest",
+    event = "User AstroFile",
   },
   {
     "folke/trouble.nvim",
@@ -114,5 +118,13 @@ return {
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
     }
-  }
+  },
+  {
+  "xero/miasma.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd("colorscheme miasma")
+  end,
+}
 }
