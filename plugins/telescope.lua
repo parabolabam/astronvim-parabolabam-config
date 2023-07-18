@@ -2,8 +2,12 @@ return {
   "nvim-telescope/telescope.nvim",
   opts = function()
     return {
-      pickers = {
-      }
+      defaults = {
+        layout_strategy = 'bottom_pane',
+        layout_config = {
+          height = 0.40,
+        },
+      },
     }
   end,
 }

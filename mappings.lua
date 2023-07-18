@@ -24,6 +24,12 @@ local mappings = {
     ["leader>gs"] = { function() require("gitsigns").stage_hunk() end, desc = "Stage git hunk" },
     ["leader>gu"] = { function() require("gitsigns").undo_stage_hunk() end, desc = "Unstage git hunk" },
     ["<leader>gd"] = { function() require("gitsigns").diffthis() end, desc = "View git diff" },
+    ["<C-b>"] = { 
+      function()
+        require("gitsigns").blame_line()
+      end,
+      desc = "Git blame"
+    },
 
     -- Telescope
     ["<leader>fp"] = { function() require("telescope").extensions.projects.projects {} end, desc = "Find projects" },
@@ -31,6 +37,11 @@ local mappings = {
     ["<c-f>"] = { function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Find commit" },
     ["<leader>gc"] = { function() require("telescope.builtin").git_bcommits() end, desc =
     "Find commit for current buffer" },
+    ["<leader>fd"] = {
+      function() 
+        require("telescope._extensions.todo-comments").todo_comments()
+      end
+    },
 
     -- Spectre search/replace
     ["<leader>s"] = { desc = "󰛔 Search/Replace" },

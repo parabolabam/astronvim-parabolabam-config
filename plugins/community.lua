@@ -2,7 +2,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.everforest" },
 
-  { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.dracula-nvim" },
 
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
