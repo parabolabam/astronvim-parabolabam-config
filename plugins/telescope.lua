@@ -8,6 +8,13 @@ return {
           height = 0.75,
         },
       },
+      pickers = {
+        live_grep = {
+          additional_args = function(opts)
+            return {"--hidden"}
+          end
+        },
+    },
     }
   end,
 }
