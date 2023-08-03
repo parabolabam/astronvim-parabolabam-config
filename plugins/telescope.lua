@@ -3,8 +3,8 @@ return {
 
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-lua/popup.nvim",
-    "nvim-telescope/telescope-live-grep-args.nvim"
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    "edluffy/hologram.nvim"
   },
   opts = function()
     return {
@@ -13,6 +13,13 @@ return {
         layout_config = {
           height = 0.75,
         },
+        file_ignore_patterns = {
+			    "node_modules",
+			    "build",
+			    "dist",
+			    "yarn.lock",
+			    "package-lock.json",
+			  },
       },
       pickers = {
         live_grep = {
@@ -24,7 +31,11 @@ return {
     }
   end,
 
-  config = function() 
-    require("telescope").load_extension("live_grep_args")
+  config = function()
+    require("telescope").load_extension("live_grep_args");
+    require("telescope").load_extension("file_browser");
+    require("hologram").setup({
+	    auto_display = true, -- WIP automatic markdown image display, may be prone to breaking
+    })
   end
 }

@@ -24,7 +24,7 @@ return function()
     TelescopePromptBorder = { fg = bg_alt, bg = bg_alt },
     TelescopePromptNormal = { fg = fg, bg = bg_alt },
     TelescopePromptPrefix = { fg = red, bg = red },
-    TelescopePromptTitle = { fg = bg, bg = fg_alt },
+    TelescopePromptTitle = { fg = bg, bg = fg },
     TelescopeResultsBorder = { fg = bg, bg = bg },
     TelescopeResultsNormal = { bg = bg },
     TelescopeResultsTitle = { fg = bg, bg = bg },  }
