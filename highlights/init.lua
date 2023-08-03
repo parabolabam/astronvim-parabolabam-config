@@ -1,11 +1,11 @@
 return function()
   local get_hlgroup = require("astronvim.utils").get_hlgroup
   local nontext = get_hlgroup "NonText"
-  local get_hlgroup = require("astronvim.utils").get_hlgroup
   -- get highlights from highlight groups
   local normal = get_hlgroup "Normal"
   local fg, bg = normal.fg, normal.bg
   local bg_alt = get_hlgroup("Visual").bg
+  local fg_alt = get_hlgroup("Visual").fg
   local green = get_hlgroup("String").fg
   local red = get_hlgroup("Error").fg
 
@@ -16,8 +16,16 @@ return function()
     OctoEditable = { fg = "NONE", bg = "NONE" },
 
 
-    TelescopePreviewTitle = { fg = bg, bg = green },
-    TelescopePromptTitle = { fg = bg, bg = red },
-    TelescopeResultsTitle = { fg = bg, bg = red }, -- use treesitter for octo.nvim highlighting
-  }
+    TelescopeBorder = { fg = bg_alt, bg = bg },
+    TelescopeNormal = { bg = bg },
+    TelescopePreviewBorder = { fg = bg, bg = bg },
+    TelescopePreviewNormal = { bg = bg },
+    TelescopePreviewTitle = { fg = bg },
+    TelescopePromptBorder = { fg = bg_alt, bg = bg_alt },
+    TelescopePromptNormal = { fg = fg, bg = bg_alt },
+    TelescopePromptPrefix = { fg = red, bg = red },
+    TelescopePromptTitle = { fg = bg, bg = fg_alt },
+    TelescopeResultsBorder = { fg = bg, bg = bg },
+    TelescopeResultsNormal = { bg = bg },
+    TelescopeResultsTitle = { fg = bg, bg = bg },  }
 end
