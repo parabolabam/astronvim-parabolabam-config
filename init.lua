@@ -32,7 +32,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "gruvbox-flat",
+  colorscheme = "catppuccin",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -52,7 +52,8 @@ return {
           "javascript",
           "css",
           "less",
-          "scss"
+          "scss",
+          "html"
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
