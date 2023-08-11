@@ -4,7 +4,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-live-grep-args.nvim",
-    "edluffy/hologram.nvim"
   },
   opts = function()
     return {
@@ -34,8 +33,5 @@ return {
   config = function()
     require("telescope").load_extension("live_grep_args");
     require("telescope").load_extension("file_browser");
-    require("hologram").setup({
-	    auto_display = true, -- WIP automatic markdown image display, may be prone to breaking
-    })
   end
 }

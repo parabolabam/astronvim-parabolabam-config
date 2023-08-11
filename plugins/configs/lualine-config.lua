@@ -424,15 +424,16 @@ return {
 		-- active right section
 		active_right({
 			function()
-				local clients = vim.lsp.get_active_clients()
-				local clients_list = {}
-				for _, client in pairs(clients) do
-					if (not clients_list[client.name]) then
-						table.insert(clients_list, client.name)
-					end
-				end
-				local lsp_lbl = dump(clients_list):gsub("(.*),", "%1")
-				return lsp_lbl:gsub(",", ", ")
+				-- local clients = vim.lsp.get_active_clients()
+				-- local clients_list = {}
+				-- for _, client in pairs(clients) do
+				-- 	if (not clients_list[client.name]) then
+				-- 		table.insert(clients_list, client.name)
+				-- 	end
+				-- end
+				-- local lsp_lbl = dump(clients_list):gsub("(.*),", "%1")
+				return ''
+				-- return lsp_lbl:gsub(",", ", ")
 			end,
 			icon = " ",
 			color = { bg = colors.green, fg = colors.black },
