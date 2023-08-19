@@ -1,17 +1,3 @@
--- local function sync_theme_with_macos()
---   -- Run a shell command to get the MacOS appearance setting
---   local f = io.popen('defaults read -g AppleInterfaceStyle')
---   local style = f:read('*all')
---   f:close()
---
---   -- The command returns "Dark\n" for dark mode and "" for light mode
---   if style == "Dark\n" then
---     vim.cmd [[set background=dark]]
---   else
---     vim.cmd [[set background=light]]
---   end
--- end
-
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -32,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "everforest",
+  colorscheme = "gruvbox-flat",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -105,6 +91,7 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    vim.opt.swapfile = false
     -- sync_theme_with_macos()
   end,
 }

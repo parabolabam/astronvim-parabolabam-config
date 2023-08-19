@@ -1,4 +1,6 @@
-return {
+local colorschemes = require "user.plugins.colorschemes.schemes"
+
+local plugins =  {
   {
     'mg979/vim-visual-multi',
     branch = 'master',
@@ -25,20 +27,6 @@ return {
     "sindrets/diffview.nvim",
     event = "User Astrofile"
   },
-  {
-    "folke/tokyonight.nvim",
-    {
-      "folke/tokyonight.nvim",
-      lazy = false,
-      opts = {
-        transparent = true,
-        styles = {
-          sidebars = "transparent",
-          floats = "transparent",
-        },
-      },
-    }
-  },
   { 'petertriho/nvim-scrollbar' },
   {
     'prettier/vim-prettier',
@@ -61,25 +49,6 @@ return {
       end,
   },
   {
-    'eddyekofo94/gruvbox-flat.nvim',
-    priority = 1000,
-    enabled = true,
-    lazy = false,
-    config = function()
-        -- vim.cmd([[colorscheme gruvbox-flat]])
-    end,
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    config = function()
-    end,
-  },
-  {
-    "sainnhe/everforest",
-    event = "User AstroFile",
-  },
-  {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "User AstroFile",
@@ -99,16 +68,27 @@ return {
     -- refer to the configuration section below
     }
   },
-  {
-    "xero/miasma.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd("colorscheme miasma")
-    end,
-  },
-  {
+   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  },
+  {
+    "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
   }
 }
+
+for _,v in ipairs(colorschemes) do
+  table.insert(plugins, v)
+end
+
+return plugins
