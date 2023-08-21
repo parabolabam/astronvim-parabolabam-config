@@ -17,7 +17,7 @@ local plugins =  {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
       local lualine = require('lualine');
-      local lualineConfig = require "user.plugins.configs.lualine-config".config();
+      local lualineConfig = require "user.plugins.configs.lualine-config";
 
       lualine.setup(lualineConfig);
     end
@@ -84,6 +84,20 @@ local plugins =  {
   {
     "aserowy/tmux.nvim",
     config = function() return require("tmux").setup() end
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+    }
+  }, 
+  {
+    'MunifTanjim/nui.nvim'
   }
 }
 
