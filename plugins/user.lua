@@ -117,8 +117,8 @@ local plugins =  {
   },
   {
     'MunifTanjim/nui.nvim'
-  }
-}
+  },
+ }
 
 for _,v in ipairs(colorschemes) do
   table.insert(plugins, v)
