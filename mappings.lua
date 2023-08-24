@@ -33,11 +33,48 @@ local mappings = {
 
     -- Telescope
     ["<leader>fp"] = { function() require("telescope").extensions.projects.projects {} end, desc = "Find projects" },
-    ["<leader>ff"] = { function() require("telescope.builtin").find_files({ hidden = true}) end, desc = "Find Files" },
+    ["<leader>ff"] = {
+      function()
+        require("telescope.builtin").find_files({
+          find_command = {
+            "fd",
+            ".",
+            "--hidden",
+            "--strip-cwd-prefix",
+          }
+        })
+      end,
+      desc = "Find Files 🔍"
+    },
+    ["<leader>fw"] = {
+      function()
+        require("telescope.builtin").live_grep({
+          prompt_title = '👀',
+          glob_pattern = {
+            "!.git/*",
+            "!node_modules/*"
+          },
+          additional_args = {
+            "--hidden"
+          }
+        })
+      end,
+      desc = "Find words 👀"
+    },
+    ["<leader>fW"] = {
+      function()
+        require("telescope.builtin").live_grep {
+          additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
+        }
+      end,
+      desc = "Find words everywhere",
+    },
     ["<leader>ggc"] = { function() require("telescope.builtin").git_commits() end, desc = "Find commit" },
     ["<c-f>"] = { function() require("telescope.builtin").current_buffer_fuzzy_find() end, desc = "Find commit" },
-    ["<leader>gc"] = { function() require("telescope.builtin").git_bcommits() end, desc =
-    "Find commit for current buffer" },
+    ["<leader>gc"] = { 
+      function() require("telescope.builtin").git_bcommits() end, 
+      desc = "Find commit for current buffer" 
+    },
     ["<leader>fd"] = {
       function()
         require("telescope._extensions.todo-comments").todo_comments()
