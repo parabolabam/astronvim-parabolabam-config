@@ -1,3 +1,7 @@
+local function setColorScheme(colorscheme)
+  require('colorbuddy').colorscheme(colorscheme)
+end
+
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -18,8 +22,6 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "gruvbox-flat",
-
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
@@ -27,6 +29,16 @@ return {
   },
 
   lsp = {
+    setup_handlers = {
+      -- -- add custom handler
+      -- tsserver = function(_, opts) require("typescript").setup {
+      --   server = opts,
+      --   on_attach = function(client, bufnr)
+      --     require("twoslash-queries").attach(client, bufnr)
+      --   end
+      -- }
+      -- end
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
@@ -64,15 +76,15 @@ return {
           "html",
           "tsserver",
         }
-      }
+      },
     },
     -- enable servers that you already have installed without mason
     servers = {
-      "angularls",
-      "tsserver",
-      "cssls",
-      "eslint",
-      "html",
+      -- "angularls",
+      -- "tsserver",
+      -- "cssls",
+      -- "eslint",
+      -- "html",
     },
   },
 
@@ -92,6 +104,7 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     vim.opt.swapfile = false
-    -- sync_theme_with_macos()
+    setColorScheme('cobalt2');
+
   end,
 }

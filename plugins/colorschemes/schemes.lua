@@ -53,5 +53,8 @@ return {
       vim.cmd("colorscheme miasma")
     end,
   },
-
+  {
+    "lalitmee/cobalt2.nvim",
+    lazy = false, -- if you want to lazy load
+  },
 }

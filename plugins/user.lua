@@ -118,7 +118,17 @@ local plugins =  {
   {
     'MunifTanjim/nui.nvim'
   },
- }
+  {
+    "tjdevries/colorbuddy.nvim",
+    config = function()
+      require('colorbuddy').setup()
+    end
+  },
+  {
+    "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
+  },
+  }
 
 for _,v in ipairs(colorschemes) do
   table.insert(plugins, v)

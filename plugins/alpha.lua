@@ -5,7 +5,6 @@ return {
       "DON'T YOU DO SHIT, MAN?",
       "DON'T YOU DO SHIT, MAN?",
       "DON'T YOU DO SHIT, MAN?"
-
     }
   end,
 }
