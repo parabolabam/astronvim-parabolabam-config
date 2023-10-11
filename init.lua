@@ -29,17 +29,7 @@ return {
   },
 
   lsp = {
-    setup_handlers = {
-      -- -- add custom handler
-      -- tsserver = function(_, opts) require("typescript").setup {
-      --   server = opts,
-      --   on_attach = function(client, bufnr)
-      --     require("twoslash-queries").attach(client, bufnr)
-      --   end
-      -- }
-      -- end
-    },
-    -- customize lsp formatting options
+       -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
@@ -77,6 +67,9 @@ return {
           "tsserver",
         }
       },
+      ["tsserver"] = { 
+
+      }
     },
     -- enable servers that you already have installed without mason
     servers = {
