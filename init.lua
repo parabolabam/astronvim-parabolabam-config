@@ -98,6 +98,5 @@ return {
   polish = function()
     vim.opt.swapfile = false
     setColorScheme('astrodark');
-
   end,
 }

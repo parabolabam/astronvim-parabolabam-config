@@ -94,7 +94,17 @@ local mappings = {
       function() require("spectre").open_visual { select_word = true } end,
       desc = "Spectre (current word)",
     },
-
+     --  misc
+    ["zm"] = {
+      function()
+        vim.cmd("foldclose")
+      end
+    },
+    ["zr"] = {
+      function()
+        vim.cmd("foldopen")
+      end
+    }
   },
 
   v = {
